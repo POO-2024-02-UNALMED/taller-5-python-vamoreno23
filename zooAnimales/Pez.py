@@ -3,12 +3,14 @@ from zooAnimales.animal import Animal
 class Pez(Animal):
     salmones = 0
     bacalaos = 0
+    listado = []
 
     def __init__(self):
         super().__init__()
         self.colorEscamas = None
         self.cantidadAletas = None
         Animal.peces += 1
+        Pez.listado.append(self)
 
     @staticmethod
     def crearSalmon(nombre, edad, genero):

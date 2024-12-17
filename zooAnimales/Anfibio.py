@@ -1,6 +1,7 @@
 from zooAnimales.animal import Animal
 
 class Anfibio(Animal):
+    listado = []
     ranas = 0
     salamandras = 0
 
@@ -9,6 +10,7 @@ class Anfibio(Animal):
         self.colorPiel = None
         self.venenoso = None
         Animal.anfibios += 1
+        Anfibio.listado.append(self)
 
     @staticmethod
     def crearRana(nombre, edad, genero):

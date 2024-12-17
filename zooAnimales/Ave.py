@@ -8,6 +8,7 @@ class Ave(Animal):
     def __init__(self, nombre=None, edad=None, habitat=None, genero=None, colorPlumas=None):
         super().__init__(nombre, edad, habitat, genero)
         self.colorPlumas = colorPlumas
+        Animal.aves += 1
         Ave.listado.append(self)
 
     def movimiento(self):

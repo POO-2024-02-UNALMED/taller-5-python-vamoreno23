@@ -9,6 +9,7 @@ class Reptil(Animal):
         super().__init__(nombre, edad, habitat, genero)
         self.colorEscamas = colorEscamas
         self.largoCola = largoCola
+        Animal.reptiles += 1
         Reptil.listado.append(self)
 
     def movimiento(self):

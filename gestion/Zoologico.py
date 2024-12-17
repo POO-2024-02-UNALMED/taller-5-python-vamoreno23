@@ -9,9 +9,11 @@ class Zoologico:
     def agregarZonas(self, zona):
         self.__zonas.append(zona)
 
-
     def cantidadTotalAnimales(self):
         return sum(zona.cantidadAnimales() for zona in self.__zonas)
+    
+
+    
 
     def getNombre(self):
         return self.__nombre
