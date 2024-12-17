@@ -1,20 +1,31 @@
+from gestion.zona import Zona
+
 class Zoologico:
-    def __init__(self):
-        self._nombre = ""  
-        self._ubicacion = ""  
-        self._zonas = []
+    def __init__(self, nombre=None, ubicacion=None):
+        self.nombre = nombre
+        self.ubicacion = ubicacion
+        self.zonas = []
 
-    def agregarZonas(self, zona):
-        self._zonas.append(zona)
+    def agregarZonas(self, zona: Zona):
+        self.zonas.append(zona)
 
-    def cantidadTotalAnimales(self):
-        total = 0
-        for zona in self._zonas:
-            total += zona.cantidadAnimales()
-        return total
-
-    def getZona(self):
-        return self._zonas
+    def cantidadTotalAnimales(self) -> int:
+        return sum(zona.cantidad_animales() for zona in self.zonas)
 
     def getNombre(self):
-        return self._nombre
+        return self.nombre
+
+    def setNombre(self, nombre):
+        self.nombre = nombre
+
+    def getUbicacion(self):
+        return self.ubicacion
+
+    def setUbicacion(self, ubicacion):
+        self.ubicacion = ubicacion
+
+    def getZonas(self):
+        return self.zonas
+
+    def setZonas(self, zonas):
+        self.zonas = zonas
