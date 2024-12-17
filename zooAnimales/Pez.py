@@ -4,10 +4,10 @@ class Pez(Animal):
     salmones = 0
     bacalaos = 0
 
-    def __init__(self, nombre=None, edad=None, habitat=None, genero=None, colorEscamas=None, cantidadAletas=None):
-        super().__init__(nombre, edad, habitat, genero)
-        self.colorEscamas = colorEscamas
-        self.cantidadAletas = cantidadAletas
+    def __init__(self):
+        super().__init__()
+        self.colorEscamas = None
+        self.cantidadAletas = None
         Animal.peces += 1
 
     @staticmethod

@@ -4,10 +4,10 @@ class Anfibio(Animal):
     ranas = 0
     salamandras = 0
 
-    def __init__(self, nombre=None, edad=None, habitat=None, genero=None, colorPiel=None, venenoso=None):
-        super().__init__(nombre, edad, habitat, genero)
-        self.colorPiel = colorPiel
-        self.venenoso = venenoso
+    def __init__(self):
+        super().__init__()
+        self.colorPiel = None
+        self.venenoso = None
         Animal.anfibios += 1
 
     @staticmethod

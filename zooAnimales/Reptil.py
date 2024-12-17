@@ -4,11 +4,11 @@ class Reptil(Animal):
     iguanas = 0
     serpientes = 0
 
-    def __init__(self, nombre=None, edad=None, habitat=None, genero=None, colorEscamas=None, largoCola=None):
-        super().__init__(nombre, edad, habitat, genero)
-        self.colorEscamas = colorEscamas
-        self.largoCola = largoCola
-        Animal.reptiles += 1
+    def __init__(self):
+        super().__init__()
+        self.pelaje = None
+        self.patas = None
+        Animal.mamiferos += 1
 
     @staticmethod
     def crearIguana(nombre, edad, genero):
