@@ -6,24 +6,23 @@ class Animal:
     peces = 0
     anfibios = 0
 
-    def __init__(self):
-        self.nombre = None
-        self.edad = None
-        self.habitat = None
-        self.genero = None
+    def __init__(self, nombre=None, edad=None, habitat=None, genero=None, zona=None):
+        self.nombre = nombre
+        self.edad = edad
+        self.habitat = habitat
+        self.genero = genero
+        self.zona = zona
         Animal.totalAnimales += 1
 
-    def movimiento(self) -> str:
+    def movimiento(self):
         return "desplazarse"
+
+    def toString(self):
+        if self.zona and self.zona.getZoo():
+            return f"Mi nombre es {self.nombre}, tengo una edad de {self.edad}, habito en {self.habitat} y mi genero es {self.genero}, la zona en la que me ubico es {self.zona.getNombre()}, en el {self.zona.getZoo().getNombre()}."
+        else:
+            return f"Mi nombre es {self.nombre}, tengo una edad de {self.edad}, habito en {self.habitat} y mi genero es {self.genero}."
 
     @staticmethod
     def totalPorTipo():
-        return (f"Mamiferos: {Animal.mamiferos}\n"
-                f"Aves: {Animal.aves}\n"
-                f"Reptiles: {Animal.reptiles}\n"
-                f"Peces: {Animal.peces}\n"
-                f"Anfibios: {Animal.anfibios}")
-
-    def __str__(self):
-        return (f"Mi nombre es {self.nombre}, tengo una edad de {self.edad}, "
-                f"habito en {self.habitat} y mi genero es {self.genero}")
+        return f"Mamíferos: {len(Mamifero.listado)}\nAves: {len(Ave.listado)}\nReptiles: {len(Reptil.listado)}\nPeces: {len(Pez.listado)}\nAnfibios: {len(Anfibio.listado)}"
