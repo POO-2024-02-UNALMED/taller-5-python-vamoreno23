@@ -1,5 +1,5 @@
 import sys
-sys.path.append("C:\Users\vamor\OneDrive\Escritorio\POO\taller-5-python-vamoreno23")
+sys.path.append(r"C:\Users\vamor\OneDrive\Escritorio\POO\taller-5-python-vamoreno23")
 from .animal import Animal
 
 class Anfibio(Animal):
