@@ -1,29 +1,34 @@
+import sys
+sys.path.append("C:\Users\vamor\OneDrive\Escritorio\POO\taller-5-python-vamoreno23")
 from gestion.zona import Zona
-from zooAnimales import *
 
 class Zoologico:
     def __init__(self, nombre=None, ubicacion=None):
-        self.__nombre = nombre
-        self.__ubicacion = ubicacion
-        self.__zonas = []
+        self._nombre = nombre
+        self._ubicacion = ubicacion
+        self._zonas = []
 
-    def agregarZonas(self, zona):
-        self.__zonas.append(zona)
+    def agregarZonas(self, zona: Zona):
+        self._zonas.append(zona)
 
-    def cantidadTotalAnimales(self):
-        return sum(zona.cantidadAnimales() for zona in self.__zonas)
-    
-
-    
+    def cantidadTotalAnimales(self) -> int:
+        return sum(zona.cantidadAnimales() 
+                   for zona in self._zonas)
 
     def getNombre(self):
-        return self.__nombre
+        return self._nombre
 
     def setNombre(self, nombre):
-        self.__nombre = nombre
+        self._nombre = nombre
 
     def getUbicacion(self):
-        return self.__ubicacion
+        return self._ubicacion
 
     def setUbicacion(self, ubicacion):
-        self.__ubicacion = ubicacion
+        self._ubicacion = ubicacion
+
+    def getZona(self):
+        return self._zonas
+
+    def setZona(self, zonas):
+        self._zonas = zonas

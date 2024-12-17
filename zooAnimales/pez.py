@@ -1,16 +1,29 @@
+import sys
+sys.path.append("C:\Users\vamor\OneDrive\Escritorio\POO\taller-5-python-vamoreno23")
 from .animal import Animal
 
 class Pez(Animal):
     salmones = 0
     bacalaos = 0
-    listado = []
 
-    def __init__(self):
-        super().__init__()
-        self.colorEscamas = None
-        self.cantidadAletas = None
+    def __init__(self, nombre=None, edad=None, habitat=None, genero=None, colorEscamas=None, cantidadAletas=None):
+        super().__init__(nombre, edad, habitat, genero)
+        self._colorEscamas = colorEscamas
+        self._cantidadAletas = cantidadAletas
         Animal.peces += 1
-        Pez.listado.append(self)
+
+    # Getters y Setters
+    def getColorEscamas(self):
+        return self._colorEscamas
+
+    def setColorEscamas(self, colorEscamas):
+        self._colorEscamas = colorEscamas
+
+    def getCantidadAletas(self):
+        return self._cantidadAletas
+
+    def setCantidadAletas(self, cantidadAletas):
+        self._cantidadAletas = cantidadAletas
 
     @staticmethod
     def crearSalmon(nombre, edad, genero):
@@ -21,7 +34,3 @@ class Pez(Animal):
     def crearBacalao(nombre, edad, genero):
         Pez.bacalaos += 1
         return Pez(nombre, edad, "mares", genero, "blanco", 3)
-    
-    @staticmethod
-    def cantidadpeces():
-        return len(Pez.listado)

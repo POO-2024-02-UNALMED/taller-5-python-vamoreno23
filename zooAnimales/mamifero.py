@@ -1,16 +1,29 @@
-from zooAnimales.animal import Animal
+import sys
+sys.path.append("C:\Users\vamor\OneDrive\Escritorio\POO\taller-5-python-vamoreno23")
+from .animal import Animal
 
 class Mamifero(Animal):
-    listado = []
     caballos = 0
     leones = 0
 
     def __init__(self, nombre=None, edad=None, habitat=None, genero=None, pelaje=None, patas=None):
         super().__init__(nombre, edad, habitat, genero)
-        self.pelaje = pelaje
-        self.patas = patas
+        self._pelaje = pelaje
+        self._patas = patas
         Animal.mamiferos += 1
-        Mamifero.listado.append(self)
+
+    # Getters y Setters
+    def isPelaje(self):
+        return self._pelaje
+
+    def setPelaje(self, pelaje):
+        self._pelaje = pelaje
+
+    def getPatas(self):
+        return self._patas
+
+    def setPatas(self, patas):
+        self._patas = patas
 
     @staticmethod
     def crearCaballo(nombre, edad, genero):
@@ -21,7 +34,3 @@ class Mamifero(Animal):
     def crearLeon(nombre, edad, genero):
         Mamifero.leones += 1
         return Mamifero(nombre, edad, "selva", genero, True, 4)
-
-    @staticmethod
-    def cantidadMamiferos():
-        return len(Mamifero.listado)

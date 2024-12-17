@@ -1,29 +1,35 @@
+import sys
+sys.path.append("C:\Users\vamor\OneDrive\Escritorio\POO\taller-5-python-vamoreno23")
 from zooAnimales.animal import Animal
 
 class Zona:
-    def __init__(self, nombre=None, zoologico=None):
-        self.nombre = nombre
-        self.zoo = zoologico 
-        self.animales = []
+    def __init__(self, nombre=None, zoo=None):
+        self._nombre = nombre
+        self._zoo = zoo
+        self._animales = []
 
+    # Métodos
     def agregarAnimales(self, animal: Animal):
-        self.animales.append(animal)
+        self._animales.append(animal)
 
-    def cantidadAnimales(self):
+    def cantidadAnimales(self) -> int:
         return len(self._animales)
 
-
-
-
-
+    # Getters y Setters
     def getNombre(self):
-        return self.__nombre
+        return self._nombre
 
     def setNombre(self, nombre):
-        self.__nombre = nombre
+        self._nombre = nombre
 
     def getZoo(self):
-        return self.__zoologico
+        return self._zoo
 
     def setZoo(self, zoo):
-        self.__zoologico = zoo
+        self._zoo = zoo
+
+    def getAnimales(self):
+        return self._animales
+
+    def notAnimales(self, animales):
+        self._animales = animales
