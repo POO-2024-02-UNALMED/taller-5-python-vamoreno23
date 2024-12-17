@@ -24,3 +24,7 @@ class Reptil(Animal):
     def crearSerpiente(nombre, edad, genero):
         Reptil.serpientes += 1
         return Reptil(nombre, edad, "jungla", genero, "blanco", 1)
+    
+    @staticmethod
+    def cantidadReptiles():
+        return len(Reptil.listado)

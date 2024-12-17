@@ -1,4 +1,4 @@
-from zooAnimales.animal import Animal
+from .animal import Animal
 
 class Pez(Animal):
     salmones = 0
@@ -21,3 +21,7 @@ class Pez(Animal):
     def crearBacalao(nombre, edad, genero):
         Pez.bacalaos += 1
         return Pez(nombre, edad, "mares", genero, "blanco", 3)
+    
+    @staticmethod
+    def cantidadpeces():
+        return len(Pez.listado)

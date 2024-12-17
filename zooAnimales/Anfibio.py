@@ -21,3 +21,7 @@ class Anfibio(Animal):
     def crearSalamandra(nombre, edad, genero):
         Anfibio.salamandras += 1
         return Anfibio(nombre, edad, "bosques", genero, "amarillo", True)
+    
+    @staticmethod
+    def cantidadAnfibios():
+        return len(Anfibio.listado)
